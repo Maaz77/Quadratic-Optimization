@@ -15,7 +15,7 @@ related source code is available in the following link: http://users.clas.ufl.ed
 
 #### 2. Gradient method :
 
-The method finds some candidate solutions for the problem, thereafter selects the global solution among them. This method is implemented in both C language and python.
+The method relies on gradient and eigenvalues. This method is implemented in both C language and python.
 
 
  
