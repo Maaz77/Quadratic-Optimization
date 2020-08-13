@@ -252,7 +252,7 @@ void get_eigs(double * a ,double * eigvecs, double * eigvals,int n){
     int info = -11;
     
     
-    dgeev_(&lefteig, &righteig, &dim, a, &dim, eigvals, wi, vl, &dim, eigvecs, &dim, work, &lwork, &info); //seems only for not symm matrice
+    dgeev_(&lefteig, &righteig, &dim, a, &dim, eigvals, wi, vl, &dim, eigvecs, &dim, work, &lwork, &info); 
     
     free(wi);
     free(vl);
@@ -274,21 +274,21 @@ double  solve_model(double * A  , double * eigvecs,double * eigvals , double * y
     
     double * candidate_solutions = (double *)malloc(n * sizeof(double));
     
-    //double * candidate_rslt   = (double *) malloc(n * sizeof(double));
+   
     
  
     double * localmin  ;
 
    
-   //printArr(eigvalsort, n);
+
     candidate_solutions[0] = binarysearch(-100,2*eigvalsort[0], 0, ytilda, eigvals, n)[0];
     
     candidate_solutions[1] = binarysearch(2*eigvalsort[n-1], 100, 1, ytilda, eigvals, n)[0];
     
-    //printf("%f , %f", candidate_solutions[0],candidate_solutions[1]);
+
     
     double minrslt = DBL_MAX ;
-   // double minrsltindex ;
+
     
     double modelrslt;
     double * modelsolution = (double  * )malloc(n*sizeof(double));
@@ -313,7 +313,7 @@ double  solve_model(double * A  , double * eigvecs,double * eigvals , double * y
    //printf("%d : ", j);
     double * thesolution;
     
-    //printf("this is j : %d\n",j);
+    
   
     for (int i =  0 ;  i<j ; i++){
         //printf("candidate %d : %f\n",i,candidate_solutions[i]);
@@ -417,14 +417,7 @@ int main(int argc, const char * argv[]) {
 //    fclose(file);
     
     
-   /* struct timespec start, end;
-    clock_gettime(CLOCK_REALTIME, &start);
-    float rt = solve_model(a, eigenvecs, eigenvals, y, n, x,ytilda);
-    clock_gettime(CLOCK_REALTIME, &end);
-    double time_spent = (end.tv_sec - start.tv_sec) +
-    (end.tv_nsec - start.tv_nsec) / BILLION;
-    printf("Time elpased is %f seconds\n", time_spent);
-    */
+
     
     
     
