@@ -1,6 +1,6 @@
 # Quadratic-Optimization
 
-**_Here are some codes to compare the time performance of two distinct methods for solving a quadratic optimization problem with norm constraint._**
+**_Here are some codes to compare the time performance of two distinct methods for solving a quadratic optimization problem subject to a norm constraint._**
 
 ## min xAx + b*x ,   s.b to |x| = 1 , A is N * N matrix , b and x are vectors  
 #### 1. SSM method: 
