@@ -1,22 +1,35 @@
 # Quadratic-Optimization
 
-**_Here are some codes to compare the time performance of two distinct methods for solving a quadratic optimization problem subject to a norm constraint._**
+This repository contains code to compare the **runtime performance** of two methods for solving a **quadratic optimization problem on the unit sphere**. 
 
-## min xAx + b*x ,   s.b to |x| = 1 , A is N * N matrix , b and x are vectors  
-#### 1. SSM method: 
-The proposed solution is iterative and based on the trust region method. For further information check the following publications: 
+## Problem Formulation
 
-a) "GLOBAL CONVERGENCE OF SSM FOR MINIMIZING A QUADRATIC OVER A SPHERE"
+We consider the constrained optimization problem:
 
-b) " MINIMIZING A QUADRATIC OVER A SPHERE∗ WILLIAM W. HAGER†"
+$$
+\min_{x \in \mathbb{R}^N} \; x^\top A x + b^\top x
+\quad \text{s.t.} \quad \|x\|_2 = 1 .
+$$
 
-related source code is available in the following link: http://users.clas.ufl.edu/hager/
+where:
+- $A \in \mathbb{R}^{N \times N}$,
+- $b \in \mathbb{R}^N$,
+- $x \in \mathbb{R}^N$.
+## Methods Implemented
 
+### 1) SSM Method (Trust-Region-Based)
 
-#### 2. Gradient method :
+An iterative approach based on the trust-region method. For details, see:
 
-The method relies on gradient and eigenvalues. This method is implemented in both C language and python.
+- **“Global Convergence of SSM for Minimizing a Quadratic over a Sphere”**
+- **William W. Hager, “Minimizing a Quadratic over a Sphere”**
 
+Related reference implementation and materials are available here:  
+http://users.clas.ufl.edu/hager/
 
- 
+### 2) Gradient-Based Method (Gradient + Eigenvalues)
+
+A method that leverages gradient information and eigenvalue computations. Implemented in:
+- **C**
+- **Python**
  
